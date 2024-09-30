@@ -5,13 +5,24 @@ nodes:
     inputs_from:
       - handle: input
         value:
+        from_node:
+          - node_id: +python#2
+            output_handle: prompt_params
       - handle: template
         value: >-
-          You are a helpful assistant. you can help me by answering my
-          questions. my question:
+          You are a AI Assistant. give a user question and snippets from the
+          book, answer the user question. if none of the snippets answer the
+          question, just say you don't know.
 
 
-          {question}
+          here snippets from the book:
+
+          {context}
+
+
+          user's question:
+
+          {input}
   - task: langchain::output_parser_string
     title: "Text Output #1"
     node_id: output_parser_string#1
@@ -44,7 +55,7 @@ nodes:
         - handle: out
           description: Output
           json_schema:
-            {}
+            type: string
       executor:
         name: python
         options:
@@ -74,3 +85,78 @@ nodes:
         value: 0.1
       - handle: api_key
         value: Custom,aigptx,API_KEY
+  - task:
+      ui:
+        default_width: 530
+      icon: ":logos:python:"
+      inputs_def:
+        - handle: retriever
+          description: Input
+          json_schema:
+            contentMediaType: oomol/var
+          value: input value
+      outputs_def:
+        - handle: prompt_params
+          description: Output
+          json_schema:
+            contentMediaType: oomol/var
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#2.py
+    title: Create Params
+    node_id: +python#2
+    inputs_from:
+      - handle: in
+      - handle: retriever
+        from_node:
+          - node_id: retriever_chroma#1
+            output_handle: output
+  - task: langchain::retriever_chroma
+    title: "Chroma Retriever #1"
+    node_id: retriever_chroma#1
+    inputs_from:
+      - handle: search_k
+        value: 9
+      - handle: reset_database_at_beginning
+        value: true
+      - handle: database_path
+        value: /oomol-storage/LangChainYoutube/Chroma
+      - handle: embeddings
+        from_node:
+          - node_id: embeddings_local#1
+            output_handle: output
+  - task: langchain::embeddings_local
+    title: "Local Embeddings #1"
+    node_id: embeddings_local#1
+    inputs_from:
+      - handle: id
+        value: sentence-transformers/multi-qa-MiniLM-L6-cos-v1
+      - handle: query_template
+        value: "{input}"
+  - task:
+      ui:
+        default_width: 530
+      icon: ":logos:python:"
+      inputs_def:
+        - handle: pdf_file
+          description: Input
+          json_schema:
+            type: string
+            ui:widget: file
+          value: input value
+      outputs_def:
+        - handle: out
+          description: Output
+          json_schema:
+            contentMediaType: oomol/var
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#3.py
+    title: Load Documents
+    node_id: +python#3
+    inputs_from:
+      - handle: in
+      - handle: pdf_file
+        value: /oomol-storage/LangChainYoutube/The Little Prince.pdf

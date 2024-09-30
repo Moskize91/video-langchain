@@ -14,7 +14,7 @@
         "y": 50.001304626464844
       },
       "width": 434,
-      "height": 345
+      "height": 435
     },
     {
       "id": "output_parser_string#1",
@@ -46,12 +46,12 @@
         "y": 232.0221055214475
       },
       "width": 434,
-      "height": 300
+      "height": 493
     },
     {
       "id": "+python#1",
       "contentWidth": 530,
-      "selected": true,
+      "selected": false,
       "dragging": false,
       "position": {
         "x": 1126.3711338619232,
@@ -62,7 +62,7 @@
         "y": 490.1436713717453
       },
       "width": 544,
-      "height": 438
+      "height": 402
     },
     {
       "id": "markdown_preview#1",
@@ -70,15 +70,15 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 2245.284001833574,
-        "y": 391.5926854040985
+        "x": 1704.0357746605978,
+        "y": 773.2030927648204
       },
       "positionAbsolute": {
-        "x": 2245.284001833574,
-        "y": 391.5926854040985
+        "x": 1704.0357746605978,
+        "y": 773.2030927648204
       },
       "width": 604,
-      "height": 300
+      "height": 390
     },
     {
       "id": "model_open_ai#3",
@@ -95,9 +95,96 @@
       },
       "width": 623,
       "height": 360
+    },
+    {
+      "id": "+python#2",
+      "contentWidth": 530,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": -461.9216166304455,
+        "y": 50.001304626464844
+      },
+      "positionAbsolute": {
+        "x": -461.9216166304455,
+        "y": 50.001304626464844
+      },
+      "width": 544,
+      "height": 617
+    },
+    {
+      "id": "retriever_chroma#1",
+      "contentWidth": 546.7147051862871,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": -1048.5239086951262,
+        "y": 50.001304626464844
+      },
+      "positionAbsolute": {
+        "x": -1048.5239086951262,
+        "y": 47.05237487235112
+      },
+      "width": 561,
+      "height": 360
+    },
+    {
+      "id": "embeddings_local#1",
+      "contentWidth": 538.7149909911641,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": -1695.406363629609,
+        "y": 521.0186217835617
+      },
+      "positionAbsolute": {
+        "x": -1695.406363629609,
+        "y": 521.0186217835617
+      },
+      "width": 553,
+      "height": 315
+    },
+    {
+      "id": "+python#3",
+      "contentWidth": 602.7253473134048,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": -1741.3390189013235,
+        "y": -333.2382375151437
+      },
+      "positionAbsolute": {
+        "x": -1741.3390189013235,
+        "y": -333.2382375151437
+      },
+      "width": 617,
+      "height": 743
     }
   ],
   "edges": [
+    {
+      "id": "ff6b435f-ff51-4ab7-9539-d149e88ead4a",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#2",
+            "output_handle": "prompt_params"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "prompt#1",
+            "input_handle": "input"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
     {
       "id": "42a30502-1f59-4c92-b034-319a66bf8ff5",
       "connection": {
@@ -208,6 +295,29 @@
           "target": {
             "node_id": "model_open_ai#3",
             "input_handle": "input"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "6b435fff-511a-4715-b9d1-49e88ead4a79",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "retriever_chroma#1",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+python#2",
+            "input_handle": "retriever"
           }
         }
       },
