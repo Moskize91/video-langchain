@@ -1,52 +1,20 @@
 {
   "nodes": [
     {
-      "id": "prompt#1",
-      "contentWidth": 200,
-      "selected": false,
-      "dragging": false,
-      "position": {
-        "x": 103,
-        "y": 50.001304626464844
-      },
-      "positionAbsolute": {
-        "x": 103,
-        "y": 50.001304626464844
-      },
-      "width": 434,
-      "height": 435
-    },
-    {
-      "id": "output_parser_string#1",
-      "contentWidth": 200,
-      "selected": false,
-      "dragging": false,
-      "position": {
-        "x": 1245.301260166243,
-        "y": 192.00130462646484
-      },
-      "positionAbsolute": {
-        "x": 1245.301260166243,
-        "y": 186.15805100368135
-      },
-      "width": 434,
-      "height": 240
-    },
-    {
       "id": "chain#1",
       "contentWidth": 200,
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 1750.0286186981054,
-        "y": 232.0221055214475
+        "x": 1718.5486495170587,
+        "y": 392.9835717222906
       },
       "positionAbsolute": {
-        "x": 1750.0286186981054,
-        "y": 232.0221055214475
+        "x": 1718.5486495170587,
+        "y": 392.9835717222906
       },
       "width": 434,
-      "height": 493
+      "height": 300
     },
     {
       "id": "+python#1",
@@ -54,12 +22,12 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 1126.3711338619232,
-        "y": 490.1436713717453
+        "x": 1094.8911646808765,
+        "y": 651.1051375725884
       },
       "positionAbsolute": {
-        "x": 1126.3711338619232,
-        "y": 490.1436713717453
+        "x": 1094.8911646808765,
+        "y": 651.1051375725884
       },
       "width": 544,
       "height": 402
@@ -70,15 +38,15 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 1704.0357746605978,
-        "y": 773.2030927648204
+        "x": 2222.3691069352867,
+        "y": 384.351257509928
       },
       "positionAbsolute": {
-        "x": 1704.0357746605978,
-        "y": 773.2030927648204
+        "x": 2222.3691069352867,
+        "y": 384.351257509928
       },
       "width": 604,
-      "height": 390
+      "height": 300
     },
     {
       "id": "model_open_ai#3",
@@ -86,12 +54,12 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 581.4359070824527,
-        "y": 72.00130462646484
+        "x": 174.3698452045336,
+        "y": -352.8239735322128
       },
       "positionAbsolute": {
-        "x": 581.4359070824527,
-        "y": 79.3102791335449
+        "x": 179.9096051030026,
+        "y": -352.8239735322128
       },
       "width": 623,
       "height": 360
@@ -110,7 +78,7 @@
         "y": 50.001304626464844
       },
       "width": 544,
-      "height": 617
+      "height": 707
     },
     {
       "id": "retriever_chroma#1",
@@ -147,7 +115,7 @@
     {
       "id": "+python#3",
       "contentWidth": 602.7253473134048,
-      "selected": false,
+      "selected": true,
       "dragging": false,
       "position": {
         "x": -1741.3390189013235,
@@ -159,55 +127,57 @@
       },
       "width": 617,
       "height": 743
+    },
+    {
+      "id": "prompt_chat#1",
+      "contentWidth": 573.5178224565145,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 174.3698452045336,
+        "y": 50.001304626464844
+      },
+      "positionAbsolute": {
+        "x": 174.3698452045336,
+        "y": 49.72628159710871
+      },
+      "width": 588,
+      "height": 435
+    },
+    {
+      "id": "output_parser_structured#1",
+      "contentWidth": 200,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1094.8911646808765,
+        "y": 285.53439158174547
+      },
+      "positionAbsolute": {
+        "x": 1094.8911646808765,
+        "y": 285.53439158174547
+      },
+      "width": 434,
+      "height": 300
+    },
+    {
+      "id": "+python#4",
+      "contentWidth": 803.301089875369,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 174.3698452045336,
+        "y": 552.6327448064175
+      },
+      "positionAbsolute": {
+        "x": 167.45410184976208,
+        "y": 552.6327448064175
+      },
+      "width": 817,
+      "height": 797
     }
   ],
   "edges": [
-    {
-      "id": "ff6b435f-ff51-4ab7-9539-d149e88ead4a",
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "+python#2",
-            "output_handle": "prompt_params"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "prompt#1",
-            "input_handle": "input"
-          }
-        }
-      },
-      "gradientColor": [
-        "var(--edge-python)",
-        "var(--edge-python)"
-      ]
-    },
-    {
-      "id": "42a30502-1f59-4c92-b034-319a66bf8ff5",
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "model_open_ai#3",
-            "output_handle": "output"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "output_parser_string#1",
-            "input_handle": "input"
-          }
-        }
-      },
-      "gradientColor": [
-        "var(--edge-python)",
-        "var(--edge-python)"
-      ]
-    },
     {
       "id": "5cbae5ad-3413-4734-8f27-0d333d7b48f4",
       "selected": false,
@@ -233,13 +203,12 @@
       ]
     },
     {
-      "id": "bae5ad34-13e7-448f-a70d-333d7b48f43f",
-      "selected": false,
+      "id": "e3813b73-8fd9-4c25-9447-ff502a8c13be",
       "connection": {
         "from": {
           "type": "from_node",
           "source": {
-            "node_id": "output_parser_string#1",
+            "node_id": "output_parser_structured#1",
             "output_handle": "output"
           }
         },
@@ -281,29 +250,6 @@
       ]
     },
     {
-      "id": "a305021f-599c-42f0-b431-9a66bf8ff50f",
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "prompt#1",
-            "output_handle": "output"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "model_open_ai#3",
-            "input_handle": "input"
-          }
-        }
-      },
-      "gradientColor": [
-        "var(--edge-python)",
-        "var(--edge-python)"
-      ]
-    },
-    {
       "id": "6b435fff-511a-4715-b9d1-49e88ead4a79",
       "connection": {
         "from": {
@@ -318,6 +264,121 @@
           "target": {
             "node_id": "+python#2",
             "input_handle": "retriever"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "66b95267-146e-4799-ad86-3bd3bd137c3c",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "embeddings_local#1",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "retriever_chroma#1",
+            "input_handle": "embeddings"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "813b738f-d99c-4594-87ff-502a8c13be9e",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#2",
+            "output_handle": "prompt_params"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "prompt_chat#1",
+            "input_handle": "input"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "3b738fd9-9c25-4447-bf50-2a8c13be9e3a",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "prompt_chat#1",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "output_parser_structured#1",
+            "input_handle": "input"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "738fd99c-2594-47ff-902a-8c13be9e3abb",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "model_open_ai#3",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "output_parser_structured#1",
+            "input_handle": "llm"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "8fd99c25-9447-4f50-aa8c-13be9e3abb29",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#4",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "output_parser_structured#1",
+            "input_handle": "class"
           }
         }
       },

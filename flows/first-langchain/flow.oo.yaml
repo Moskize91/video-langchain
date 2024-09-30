@@ -1,37 +1,4 @@
 nodes:
-  - task: langchain::prompt
-    title: "Prompt #1"
-    node_id: prompt#1
-    inputs_from:
-      - handle: input
-        value:
-        from_node:
-          - node_id: +python#2
-            output_handle: prompt_params
-      - handle: template
-        value: >-
-          You are a AI Assistant. give a user question and snippets from the
-          book, answer the user question. if none of the snippets answer the
-          question, just say you don't know.
-
-
-          here snippets from the book:
-
-          {context}
-
-
-          user's question:
-
-          {input}
-  - task: langchain::output_parser_string
-    title: "Text Output #1"
-    node_id: output_parser_string#1
-    inputs_from:
-      - handle: input
-        value:
-        from_node:
-          - node_id: model_open_ai#3
-            output_handle: output
   - task: langchain::chain
     title: "Invoke Chain #1"
     node_id: chain#1
@@ -43,7 +10,7 @@ nodes:
             output_handle: out
       - handle: chain
         from_node:
-          - node_id: output_parser_string#1
+          - node_id: output_parser_structured#1
             output_handle: output
   - task:
       ui:
@@ -76,9 +43,6 @@ nodes:
     inputs_from:
       - handle: input
         value:
-        from_node:
-          - node_id: prompt#1
-            output_handle: output
       - handle: model
         value: gpt-3.5-turbo
       - handle: temperature
@@ -160,3 +124,66 @@ nodes:
       - handle: in
       - handle: pdf_file
         value: /oomol-storage/LangChainYoutube/The Little Prince.pdf
+  - task: langchain::prompt_chat
+    title: "Chat Prompt #1"
+    node_id: prompt_chat#1
+    inputs_from:
+      - handle: input
+        value:
+        from_node:
+          - node_id: +python#2
+            output_handle: prompt_params
+      - handle: system_template
+        value: >
+          You are a AI Assistant. give a user question and snippets from the
+          book, answer the user question. if none of the snippets answer the
+          question, just say you don't know.
+
+
+          here snippets from the book:
+
+          {context}
+      - handle: user_template
+        value: "{input}"
+  - task: langchain::output_parser_structured
+    title: "Structured Output #1"
+    node_id: output_parser_structured#1
+    inputs_from:
+      - handle: input
+        value:
+        from_node:
+          - node_id: prompt_chat#1
+            output_handle: output
+      - handle: llm
+        from_node:
+          - node_id: model_open_ai#3
+            output_handle: output
+      - handle: class
+        from_node:
+          - node_id: +python#4
+            output_handle: output
+  - task:
+      ui:
+        default_width: 530
+      icon: ":logos:python:"
+      inputs_def:
+        - handle: in
+          ignoreNull: true
+          value: input value
+          description: Input
+          json_schema:
+            type: string
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            contentMediaType: oomol/var
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#4.py
+    title: Define Class
+    node_id: +python#4
+    inputs_from:
+      - handle: in
+        value: input value
