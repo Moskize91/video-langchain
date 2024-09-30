@@ -1,0 +1,220 @@
+{
+  "nodes": [
+    {
+      "id": "prompt#1",
+      "contentWidth": 200,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 103,
+        "y": 50.001304626464844
+      },
+      "positionAbsolute": {
+        "x": 103,
+        "y": 50.001304626464844
+      },
+      "width": 434,
+      "height": 345
+    },
+    {
+      "id": "output_parser_string#1",
+      "contentWidth": 200,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1245.301260166243,
+        "y": 192.00130462646484
+      },
+      "positionAbsolute": {
+        "x": 1245.301260166243,
+        "y": 186.15805100368135
+      },
+      "width": 434,
+      "height": 240
+    },
+    {
+      "id": "chain#1",
+      "contentWidth": 200,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1750.0286186981054,
+        "y": 232.0221055214475
+      },
+      "positionAbsolute": {
+        "x": 1750.0286186981054,
+        "y": 232.0221055214475
+      },
+      "width": 434,
+      "height": 300
+    },
+    {
+      "id": "+python#1",
+      "contentWidth": 530,
+      "selected": true,
+      "dragging": false,
+      "position": {
+        "x": 1126.3711338619232,
+        "y": 490.1436713717453
+      },
+      "positionAbsolute": {
+        "x": 1126.3711338619232,
+        "y": 490.1436713717453
+      },
+      "width": 544,
+      "height": 438
+    },
+    {
+      "id": "markdown_preview#1",
+      "contentWidth": 589.7628118241591,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 2245.284001833574,
+        "y": 391.5926854040985
+      },
+      "positionAbsolute": {
+        "x": 2245.284001833574,
+        "y": 391.5926854040985
+      },
+      "width": 604,
+      "height": 300
+    },
+    {
+      "id": "model_open_ai#3",
+      "contentWidth": 608.6542447543093,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 581.4359070824527,
+        "y": 72.00130462646484
+      },
+      "positionAbsolute": {
+        "x": 581.4359070824527,
+        "y": 79.3102791335449
+      },
+      "width": 623,
+      "height": 360
+    }
+  ],
+  "edges": [
+    {
+      "id": "42a30502-1f59-4c92-b034-319a66bf8ff5",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "model_open_ai#3",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "output_parser_string#1",
+            "input_handle": "input"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "5cbae5ad-3413-4734-8f27-0d333d7b48f4",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#1",
+            "output_handle": "out"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "chain#1",
+            "input_handle": "params"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "bae5ad34-13e7-448f-a70d-333d7b48f43f",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "output_parser_string#1",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "chain#1",
+            "input_handle": "chain"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "e5ad3413-e734-4f27-8d33-3d7b48f43f17",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "chain#1",
+            "output_handle": "response"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "markdown_preview#1",
+            "input_handle": "text"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "a305021f-599c-42f0-b431-9a66bf8ff50f",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "prompt#1",
+            "output_handle": "output"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "model_open_ai#3",
+            "input_handle": "input"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    }
+  ]
+}
