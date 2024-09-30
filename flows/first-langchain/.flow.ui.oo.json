@@ -14,7 +14,7 @@
         "y": 392.9835717222906
       },
       "width": 434,
-      "height": 300
+      "height": 301
     },
     {
       "id": "+python#1",
@@ -23,30 +23,14 @@
       "dragging": false,
       "position": {
         "x": 1094.8911646808765,
-        "y": 651.1051375725884
+        "y": 965.9835717222907
       },
       "positionAbsolute": {
-        "x": 1094.8911646808765,
-        "y": 651.1051375725884
+        "x": 1097.630621364602,
+        "y": 966.1426562010307
       },
       "width": 544,
-      "height": 402
-    },
-    {
-      "id": "markdown_preview#1",
-      "contentWidth": 589.7628118241591,
-      "selected": false,
-      "dragging": false,
-      "position": {
-        "x": 2222.3691069352867,
-        "y": 384.351257509928
-      },
-      "positionAbsolute": {
-        "x": 2222.3691069352867,
-        "y": 384.351257509928
-      },
-      "width": 604,
-      "height": 300
+      "height": 403
     },
     {
       "id": "model_open_ai#3",
@@ -54,15 +38,15 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 174.3698452045336,
-        "y": -352.8239735322128
+        "x": 305.8637660233618,
+        "y": -607.5934451186922
       },
       "positionAbsolute": {
-        "x": 179.9096051030026,
-        "y": -352.8239735322128
+        "x": 305.8637660233618,
+        "y": -607.5934451186922
       },
       "width": 623,
-      "height": 360
+      "height": 361
     },
     {
       "id": "+python#2",
@@ -78,7 +62,7 @@
         "y": 50.001304626464844
       },
       "width": 544,
-      "height": 707
+      "height": 846
     },
     {
       "id": "retriever_chroma#1",
@@ -94,7 +78,7 @@
         "y": 47.05237487235112
       },
       "width": 561,
-      "height": 360
+      "height": 361
     },
     {
       "id": "embeddings_local#1",
@@ -114,8 +98,8 @@
     },
     {
       "id": "+python#3",
-      "contentWidth": 602.7253473134048,
-      "selected": true,
+      "contentWidth": 593.1600900556886,
+      "selected": false,
       "dragging": false,
       "position": {
         "x": -1741.3390189013235,
@@ -125,8 +109,8 @@
         "x": -1741.3390189013235,
         "y": -333.2382375151437
       },
-      "width": 617,
-      "height": 743
+      "width": 607,
+      "height": 816
     },
     {
       "id": "prompt_chat#1",
@@ -134,15 +118,15 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 174.3698452045336,
-        "y": 50.001304626464844
+        "x": 305.8637660233618,
+        "y": -204.76816696001455
       },
       "positionAbsolute": {
-        "x": 174.3698452045336,
-        "y": 49.72628159710871
+        "x": 305.8637660233618,
+        "y": -204.76816696001455
       },
       "width": 588,
-      "height": 435
+      "height": 468
     },
     {
       "id": "output_parser_structured#1",
@@ -158,7 +142,7 @@
         "y": 285.53439158174547
       },
       "width": 434,
-      "height": 300
+      "height": 301
     },
     {
       "id": "+python#4",
@@ -166,15 +150,47 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 174.3698452045336,
-        "y": 552.6327448064175
+        "x": 157.93310510217998,
+        "y": 612.9007918483803
       },
       "positionAbsolute": {
-        "x": 167.45410184976208,
-        "y": 552.6327448064175
+        "x": 157.93310510217998,
+        "y": 612.9007918483803
       },
       "width": 817,
-      "height": 797
+      "height": 798
+    },
+    {
+      "id": "+python#5",
+      "contentWidth": 740.251650362826,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 2200.737104007027,
+        "y": 820.338814383482
+      },
+      "positionAbsolute": {
+        "x": 2200.737104007027,
+        "y": 820.338814383482
+      },
+      "width": 754,
+      "height": 954
+    },
+    {
+      "id": "html_preview#1",
+      "contentWidth": 760.6146080098492,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 3007.847421950634,
+        "y": 820.338814383482
+      },
+      "positionAbsolute": {
+        "x": 3007.847421950634,
+        "y": 820.0719553442025
+      },
+      "width": 775,
+      "height": 301
     }
   ],
   "edges": [
@@ -226,30 +242,6 @@
       ]
     },
     {
-      "id": "e5ad3413-e734-4f27-8d33-3d7b48f43f17",
-      "selected": false,
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "chain#1",
-            "output_handle": "response"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "markdown_preview#1",
-            "input_handle": "text"
-          }
-        }
-      },
-      "gradientColor": [
-        "var(--edge-json)",
-        "var(--edge-json)"
-      ]
-    },
-    {
       "id": "6b435fff-511a-4715-b9d1-49e88ead4a79",
       "connection": {
         "from": {
@@ -296,7 +288,32 @@
       ]
     },
     {
+      "id": "cfd0b5e4-3af5-4d42-b7f8-c62254da701a",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#3",
+            "output_handle": "out"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "retriever_chroma#1",
+            "input_handle": "documents"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
       "id": "813b738f-d99c-4594-87ff-502a8c13be9e",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -320,6 +337,7 @@
     },
     {
       "id": "3b738fd9-9c25-4447-bf50-2a8c13be9e3a",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -343,6 +361,7 @@
     },
     {
       "id": "738fd99c-2594-47ff-902a-8c13be9e3abb",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -385,6 +404,98 @@
       "gradientColor": [
         "var(--edge-python)",
         "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "5827f0b5-e3ea-43db-bc84-89fb0e57f309",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#1",
+            "output_handle": "out"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+python#5",
+            "input_handle": "question"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "27f0b5e3-ead3-4bbc-8489-fb0e57f30999",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "chain#1",
+            "output_handle": "response_structured"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+python#5",
+            "input_handle": "answer"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "f0b5e3ea-d3db-4c84-89fb-0e57f309993c",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#2",
+            "output_handle": "sources"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+python#5",
+            "input_handle": "sources"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "d0b5e43a-f50d-42b7-b8c6-2254da701a25",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#5",
+            "output_handle": "html"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "html_preview#1",
+            "input_handle": "html"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
       ]
     }
   ]

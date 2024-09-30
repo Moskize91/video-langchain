@@ -6,7 +6,7 @@ from pydantic import Field, BaseModel
 class CitedAnswer(BaseModel):
   """anwser the user question based only on the given sources."""
 
-  anser_sentences: list[AnswerSentence] = Field(
+  anwser_sentences: list[AnswerSentence] = Field(
     ...,
   )
 

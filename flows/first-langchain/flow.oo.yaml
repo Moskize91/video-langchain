@@ -27,16 +27,8 @@ nodes:
         name: python
         options:
           entry: scriptlets/+python#1.py
-    title: "Python #1"
+    title: "Question"
     node_id: +python#1
-  - task: preview::markdown_preview
-    title: "Markdown Preview #1"
-    node_id: markdown_preview#1
-    inputs_from:
-      - handle: text
-        from_node:
-          - node_id: chain#1
-            output_handle: response
   - task: langchain::model_open_ai
     title: "OpenAI Model #3"
     node_id: model_open_ai#3
@@ -62,6 +54,9 @@ nodes:
       outputs_def:
         - handle: prompt_params
           description: Output
+          json_schema:
+            contentMediaType: oomol/var
+        - handle: sources
           json_schema:
             contentMediaType: oomol/var
       executor:
@@ -90,6 +85,10 @@ nodes:
         from_node:
           - node_id: embeddings_local#1
             output_handle: output
+      - handle: documents
+        from_node:
+          - node_id: +python#3
+            output_handle: out
   - task: langchain::embeddings_local
     title: "Local Embeddings #1"
     node_id: embeddings_local#1
@@ -187,3 +186,55 @@ nodes:
     inputs_from:
       - handle: in
         value: input value
+  - task:
+      ui:
+        default_width: 530
+      icon: ":logos:python:"
+      inputs_def:
+        - handle: question
+          json_schema:
+            type: string
+        - handle: answer
+          json_schema:
+            contentMediaType: oomol/var
+        - handle: sources
+          json_schema:
+            contentMediaType: oomol/var
+      outputs_def:
+        - handle: html
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#5.py
+    title: Generate HTML
+    node_id: +python#5
+    inputs_from:
+      - handle: in
+        value: input value
+      - handle: handle0
+      - handle: question
+        value: input value
+        from_node:
+          - node_id: +python#1
+            output_handle: out
+      - handle: handle1
+      - handle: answer
+        from_node:
+          - node_id: chain#1
+            output_handle: response_structured
+      - handle: handle2
+      - handle: sources
+        from_node:
+          - node_id: +python#2
+            output_handle: sources
+  - task: preview::html_preview
+    title: "HTML Preview #1"
+    node_id: html_preview#1
+    inputs_from:
+      - handle: html
+        from_node:
+          - node_id: +python#5
+            output_handle: html

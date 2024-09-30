@@ -13,6 +13,10 @@ def main(inputs: dict, context: Context):
       page_content = page.extract_text_simple()
       docs.append(Document(
         page_content=page_content,
+        metadata={
+          "page": page.page_number,
+          "path": pdf_file_path,
+        },
       ))
 
   text_splitter = RecursiveCharacterTextSplitter(
